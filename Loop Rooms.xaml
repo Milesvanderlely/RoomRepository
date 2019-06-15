@@ -1,0 +1,364 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Loop_Rooms" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="RoomTotal" Type="InArgument(x:Int32)" />
+    <x:Property Name="DtRooms" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>650,3709</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Loop Rooms" sap:VirtualizedContainerService.HintSize="610,3589" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="RoomNum" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="588,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started looping rooms...&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="588,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[RoomNum]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">0</InArgument>
+      </Assign.Value>
+    </Assign>
+    <While sap:VirtualizedContainerService.HintSize="588,3103" sap2010:WorkflowViewState.IdRef="While_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <While.Condition>[RoomNum &lt; RoomTotal]</While.Condition>
+      <Sequence sap:VirtualizedContainerService.HintSize="562,2945" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="540,2821" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <TryCatch.Try>
+            <Sequence sap:VirtualizedContainerService.HintSize="522,2594" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Int32" Name="TabCount" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="500,2470" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="88e17cb9b890978d27103a47cc4a0084" Selector="&lt;html app='chrome.exe' title='*ROOM' /&gt;">
+                <ui:BrowserScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2324" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click aanbod" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2d7d7fbe415f3642dfc737cf57820391" Selector="&lt;webctrl aaname='AANBOD' tag='SPAN' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element Passend Aanbod" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" WaitActive="False" WaitVisible="False">
+                        <ui:WaitUiElementAppear.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4e6d6d5b1db8f0b47d4375ae2dc91cd2" Selector="&lt;webctrl aaname='Passend aanbod' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:WaitUiElementAppear.Target>
+                      </ui:WaitUiElementAppear>
+                      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send End" EmptyField="False" sap:VirtualizedContainerService.HintSize="464,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="end" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                        <ui:SendHotkey.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6dee756acb8bc843c26990dd282b67e1" WaitForReady="INTERACTIVE" />
+                        </ui:SendHotkey.Target>
+                      </ui:SendHotkey>
+                      <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 500 milliseconds" Duration="00:00:00.5000000" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="Delay_2">
+                        <TextExpression.Namespaces>
+                          <sco:Collection x:TypeArguments="x:String">
+                            <x:String>System.Activities</x:String>
+                            <x:String>System.Activities.Statements</x:String>
+                            <x:String>System.Activities.Expressions</x:String>
+                            <x:String>System.Activities.Validation</x:String>
+                            <x:String>System.Activities.XamlIntegration</x:String>
+                            <x:String>Microsoft.VisualBasic.Activities</x:String>
+                            <x:String>System</x:String>
+                            <x:String>System.Collections.Generic</x:String>
+                            <x:String>System.Data</x:String>
+                            <x:String>System.Diagnostics</x:String>
+                            <x:String>System.IO</x:String>
+                            <x:String>System.Linq</x:String>
+                            <x:String>System.Management.Automation</x:String>
+                            <x:String>System.Net.Mail</x:String>
+                            <x:String>System.Xml</x:String>
+                            <x:String>System.Xml.Linq</x:String>
+                            <x:String>UiPath.Library</x:String>
+                            <x:String>System.Windows.Markup</x:String>
+                          </sco:Collection>
+                        </TextExpression.Namespaces>
+                        <TextExpression.References>
+                          <sco:Collection x:TypeArguments="AssemblyReference">
+                            <AssemblyReference>System.Activities</AssemblyReference>
+                            <AssemblyReference>mscorlib</AssemblyReference>
+                            <AssemblyReference>System.Data</AssemblyReference>
+                            <AssemblyReference>System</AssemblyReference>
+                            <AssemblyReference>System.Core</AssemblyReference>
+                            <AssemblyReference>System.Management.Automation</AssemblyReference>
+                            <AssemblyReference>System.Xml</AssemblyReference>
+                            <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                            <AssemblyReference>UiPath.Library</AssemblyReference>
+                            <AssemblyReference>PresentationFramework</AssemblyReference>
+                            <AssemblyReference>WindowsBase</AssemblyReference>
+                            <AssemblyReference>PresentationCore</AssemblyReference>
+                            <AssemblyReference>System.Xaml</AssemblyReference>
+                          </sco:Collection>
+                        </TextExpression.References>
+                        <sap2010:WorkflowViewState.ViewStateManager>
+                          <sap2010:ViewStateManager>
+                            <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                          </sap2010:ViewStateManager>
+                        </sap2010:WorkflowViewState.ViewStateManager>
+                      </Delay>
+                      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send End" EmptyField="False" sap:VirtualizedContainerService.HintSize="464,154" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="end" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                        <ui:SendHotkey.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3b6859096f117a3a4b2a0aad390416b7" WaitForReady="INTERACTIVE" />
+                        </ui:SendHotkey.Target>
+                      </ui:SendHotkey>
+                      <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 500 milliseconds" Duration="00:00:00.5000000" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="Delay_3">
+                        <TextExpression.Namespaces>
+                          <sco:Collection x:TypeArguments="x:String">
+                            <x:String>System.Activities</x:String>
+                            <x:String>System.Activities.Statements</x:String>
+                            <x:String>System.Activities.Expressions</x:String>
+                            <x:String>System.Activities.Validation</x:String>
+                            <x:String>System.Activities.XamlIntegration</x:String>
+                            <x:String>Microsoft.VisualBasic.Activities</x:String>
+                            <x:String>System</x:String>
+                            <x:String>System.Collections.Generic</x:String>
+                            <x:String>System.Data</x:String>
+                            <x:String>System.Diagnostics</x:String>
+                            <x:String>System.IO</x:String>
+                            <x:String>System.Linq</x:String>
+                            <x:String>System.Management.Automation</x:String>
+                            <x:String>System.Net.Mail</x:String>
+                            <x:String>System.Xml</x:String>
+                            <x:String>System.Xml.Linq</x:String>
+                            <x:String>UiPath.Library</x:String>
+                            <x:String>System.Windows.Markup</x:String>
+                          </sco:Collection>
+                        </TextExpression.Namespaces>
+                        <TextExpression.References>
+                          <sco:Collection x:TypeArguments="AssemblyReference">
+                            <AssemblyReference>System.Activities</AssemblyReference>
+                            <AssemblyReference>mscorlib</AssemblyReference>
+                            <AssemblyReference>System.Data</AssemblyReference>
+                            <AssemblyReference>System</AssemblyReference>
+                            <AssemblyReference>System.Core</AssemblyReference>
+                            <AssemblyReference>System.Management.Automation</AssemblyReference>
+                            <AssemblyReference>System.Xml</AssemblyReference>
+                            <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                            <AssemblyReference>UiPath.Library</AssemblyReference>
+                            <AssemblyReference>PresentationFramework</AssemblyReference>
+                            <AssemblyReference>WindowsBase</AssemblyReference>
+                            <AssemblyReference>PresentationCore</AssemblyReference>
+                            <AssemblyReference>System.Xaml</AssemblyReference>
+                          </sco:Collection>
+                        </TextExpression.References>
+                        <sap2010:WorkflowViewState.ViewStateManager>
+                          <sap2010:ViewStateManager>
+                            <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                          </sap2010:ViewStateManager>
+                        </sap2010:WorkflowViewState.ViewStateManager>
+                      </Delay>
+                      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send End" EmptyField="False" sap:VirtualizedContainerService.HintSize="464,154" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="end" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                        <ui:SendHotkey.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="301eeb4745474e5c2b8d3f7049a5fdf8" Selector="&lt;html app='chrome.exe' title='Studentenwoningen - ROOM' /&gt;&lt;webctrl tag='DIV' class='woningaanbod-lijst' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:SendHotkey.Target>
+                      </ui:SendHotkey>
+                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click sorteer" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="76c08f2381e0741c13f9461583f248a8" Selector="&lt;webctrl tag='SPAN' aaname='Verfijn verder met bovenstaande filters.' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <Assign sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[TabCount]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">-2</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <While sap:VirtualizedContainerService.HintSize="464,535" sap2010:WorkflowViewState.IdRef="While_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <While.Condition>[TabCount &lt; RoomNum + 1]</While.Condition>
+                        <Sequence sap:VirtualizedContainerService.HintSize="336,378" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Tab" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,154" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="tab" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
+                            <ui:SendHotkey.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3aadb1de112eb7306925df0df84dc58a" WaitForReady="INTERACTIVE" />
+                            </ui:SendHotkey.Target>
+                          </ui:SendHotkey>
+                          <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[TabCount]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[TabCount + 1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </While>
+                      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Click Enter" EmptyField="False" sap:VirtualizedContainerService.HintSize="464,154" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="enter" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
+                        <ui:SendHotkey.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6bd8492955a774abb7082644300a3fca" WaitForReady="INTERACTIVE" />
+                        </ui:SendHotkey.Target>
+                      </ui:SendHotkey>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get Room Information workflow" sap:VirtualizedContainerService.HintSize="464,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Get Room Information.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DtRooms">[DtRooms]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="RoomNum">[RoomNum]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <Assign sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[RoomNum]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[RoomNum+1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:BrowserScope.Body>
+              </ui:BrowserScope>
+            </Sequence>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="526,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <Sequence sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;could not compute due to &quot; + exception.Message]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[RoomNum]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[RoomNum+1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
+      </Sequence>
+    </While>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="588,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Finished looping rooms&quot;]" />
+  </Sequence>
+</Activity>
