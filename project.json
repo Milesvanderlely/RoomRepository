@@ -3,32 +3,38 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.5.3]",
-    "UiPath.Mail.Activities": "[1.4.0]",
-    "UiPath.System.Activities": "[19.4.0]",
-    "UiPath.UIAutomation.Activities": "[19.4.1]",
+    "UiPath.Excel.Activities": "[2.6.2]",
+    "UiPath.Mail.Activities": "[1.5.1]",
+    "UiPath.System.Activities": "[19.7.0]",
+    "UiPath.UIAutomation.Activities": "[19.7.0]",
     "UiPathTeam.XPathWebScrape.Activities": "1.0.1"
   },
-  "schemaVersion": "3.2",
-  "studioVersion": "19.4.2.0",
-  "projectVersion": "1.0.8",
+  "webServices": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "19.7.0.0",
+  "projectVersion": "1.0.7171.39534",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
     "excludedLoggedData": [
       "Private:*",
       "*password*"
-    ]
+    ],
+    "executionType": "Workflow"
   },
-  "projectType": "Workflow",
-  "expressionLanguage": "VisualBasic",
-  "libraryOptions": {
-    "includeOriginalXaml": false,
-    "privateWorkflows": []
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    }
   },
   "arguments": {
     "input": [],
     "output": []
   },
-  "webServices": []
+  "expressionLanguage": "VisualBasic"
 }
